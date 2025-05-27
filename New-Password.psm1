@@ -39,4 +39,5 @@ function New-Password {
   Set-Clipboard $passwd 
 }
 
+Set-Alias "pswd" New-Password
 Export-ModuleMember -Function New-Password -Alias "pswd"

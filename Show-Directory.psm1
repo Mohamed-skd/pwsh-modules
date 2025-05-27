@@ -83,4 +83,5 @@ function Show-Directory {
   }
 }
 
+Set-Alias "direc" Show-Directory
 Export-ModuleMember -Function Show-Directory -Alias "direc"
