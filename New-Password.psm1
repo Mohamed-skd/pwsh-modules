@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Generate a password
+Generate a password with only numbers and letters
 
 .EXAMPLE
 pswd
