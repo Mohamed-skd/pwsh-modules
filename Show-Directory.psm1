@@ -26,7 +26,7 @@ function Show-Directory {
     $List { 
       $dirs = @(Get-ChildItem -Directory) 
       if ($dirs.Count -lt 1) {
-        logInfo "No directories" 
+        Write-Host "ℹ️ No directories" 
         exit 
       }
         
@@ -49,11 +49,11 @@ function Show-Directory {
       $fCount = $full.Count 
       $eCount = $empty.Count 
       if ($fCount -lt 1) {
-        logInfo "The $total directories here are empty" 
+        Write-Host "ℹ️ The $total directories here are empty" 
         exit 
       }
         
-      logInfo $($fCount -eq 1 ? "1 full directory" : "Full directories: $fCount/$total") 
+      Write-Host $($fCount -eq 1 ? "ℹ️ 1 full directory" : "ℹ️ Full directories: $fCount/$total") 
       foreach ($dir in $full.Keys) {
         Write-Host $dir -ForegroundColor Green 
         Write-Host "$($full[$dir])" 
@@ -61,7 +61,7 @@ function Show-Directory {
       Write-Host `r 
         
       if ($eCount -gt 0) {
-        logInfo $($eCount -eq 1 ? "1 empty directory" : "Empty directories: $eCount/$total") 
+        Write-Host $($eCount -eq 1 ? "ℹ️ 1 empty directory" : "ℹ️ Empty directories: $eCount/$total") 
         foreach ($dir in $empty) {
           Write-Host $dir -ForegroundColor Red 
         }
