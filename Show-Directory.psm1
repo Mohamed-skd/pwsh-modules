@@ -26,7 +26,7 @@ function Show-Directory {
     $List { 
       $dirs = @(Get-ChildItem -Directory) 
       if (!$dirs) {
-        logError("No directories") 
+        Write-Host "❌ No directories" 
 	break;
       }
         
@@ -72,7 +72,7 @@ function Show-Directory {
     $GetTextsContent { 
       $files = @(Get-ChildItem -File) 
       if (!$files) {
-        logError("No files") 
+        Write-Host "❌ No files"
 	break;
       }
 
