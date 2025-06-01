@@ -25,9 +25,9 @@ function Show-Directory {
   switch ($true) {
     $List { 
       $dirs = @(Get-ChildItem -Directory) 
-      if ($dirs.Count -lt 1) {
-        Write-Host "ℹ️ No directories" 
-        exit 
+      if (!$dirs) {
+        logError("No directories") 
+	break;
       }
         
       $full = @{} 
@@ -71,8 +71,12 @@ function Show-Directory {
     }
     $GetTextsContent { 
       $files = @(Get-ChildItem -File) 
+      if (!$files) {
+        logError("No files") 
+	break;
+      }
+
       Write-Host "`n" 
-        
       foreach ($file in $files) {
         Write-Host "$($file.Name) :" -ForegroundColor Green 
         Get-Content $file 
