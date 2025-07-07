@@ -30,10 +30,10 @@ function Get-Lorem {
   $res = "" 
     
   for ($i = 0; $i -lt $Count; $i++) {
-    $res += "`n$lorem" 
+    $res += "$lorem`n" 
   }
     
-  Write-Host $res`n 
+  Write-Host $res 
   Set-Clipboard $res   
 }
 
