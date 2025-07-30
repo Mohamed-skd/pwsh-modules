@@ -33,7 +33,7 @@ function Get-Lorem {
     $res += "$lorem`n" 
   }
     
-  Write-Host $res 
+  Write-Output $res 
   Set-Clipboard $res   
 }
 

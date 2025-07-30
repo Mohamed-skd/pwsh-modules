@@ -35,7 +35,7 @@ function New-Password {
     $passwd += $flip ? $base[$index].ToString().ToLower() : $base[$index].ToString().ToUpper() 
   }
   
-  Write-Host `n$passwd`n 
+  Write-Output `n$passwd`n 
   Set-Clipboard $passwd 
 }
 
